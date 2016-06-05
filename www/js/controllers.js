@@ -42,12 +42,12 @@ angular.module('lunch-decision.controllers', [])
   });
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('MealDetailCtrl', function($scope, $stateParams, Meals) {
+  // $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('SettingsCtrl', function($scope, $localStorage) {
   $scope.$storage = $localStorage.$default({
-    api_base: 'localhost:9000'
+    api_base: 'http://localhost:9000'
   });
 });
