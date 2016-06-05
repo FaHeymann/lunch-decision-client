@@ -1,0 +1,18 @@
+<ion-view view-title="Today">
+    <div ng-show="status == 'success'" class="bar bar-subheader bar-balanced">
+        <h2 class="title">Veto wurde verschickt</h2>
+    </div>
+    <div ng-show="status == 'error'" class="bar bar-subheader bar-assertive">
+        <h2 class="title">Ein Fehler ist aufgetreten</h2>
+    </div>
+    <ion-content class="padding has-header">
+        <h1 class="tab-current-heading">
+            {{currentMeal.name}}
+        </h1>
+        <img ng-src="{{ currentMeal.image }}" class="image-center" width="50%">
+        <p class="tab-current-description">
+            {{ currentMeal.description }}
+        </p>
+        <button ng-disabled="vetod" ng-click="postVeto()" class="button button-block button-assertive">Veto</button>
+    </ion-content>
+</ion-view>
