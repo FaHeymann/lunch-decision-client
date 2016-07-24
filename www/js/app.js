@@ -15,18 +15,17 @@ angular.module('lunch-decision', ['ionic','ionic.service.core', 'lunch-decision.
     }
 
     //push dev
-    var push = new Ionic.Push({
-      "debug": true,
-
-      onNotification: function(payload) {
-        console.log(payload);
-      }
-    });
-
-    push.register(function(token) {
-      console.log("Device token:",token.token);
-    });
-
+    // var push = new Ionic.Push({
+    //   "debug": true,
+    //
+    //   onNotification: function(payload) {
+    //     console.log(payload);
+    //   }
+    // });
+    //
+    // push.register(function(token) {
+    //   console.log("Device token:",token.token);
+    // });
   });
 })
 
