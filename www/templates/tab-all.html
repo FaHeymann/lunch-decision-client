@@ -1,8 +1,8 @@
-<ion-view view-title="Meals">
+<ion-view view-title="Meals" hide-back-button="true">
     <ion-content>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meal in meals" type="item-text-wrap" href="#/tab/all/1">
-                <img ng-src="{{chat.face}}">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meal in meals" type="item-text-wrap" href="#/tab/all/{{ meal.id }}">
+                <img ng-src="{{meal.image}}">
                 <h2>{{meal.name}}</h2>
                 <p>{{meal.description}}</p>
                 <i class="icon ion-chevron-right icon-accessory"></i>

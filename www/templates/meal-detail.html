@@ -1,6 +1,11 @@
 <ion-view view-title="Details">
   <ion-content class="padding">
-    details hier
+    <h1 class="tab-current-heading">
+      {{meal.name}}
+    </h1>
+    <img ng-src="{{ meal.image }}" class="image-center" width="50%">
+    <p class="tab-current-description">
+      {{ meal.description }}
     </p>
   </ion-content>
 </ion-view>

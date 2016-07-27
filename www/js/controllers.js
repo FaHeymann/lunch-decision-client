@@ -15,7 +15,7 @@ angular.module('lunch-decision.controllers', [])
   $scope.status = 'default';
 
   $scope.postVeto = function() {
-    if($localStorage.vetod) {
+    if($scope.vetod) {
       return;
     }
 
@@ -24,11 +24,11 @@ angular.module('lunch-decision.controllers', [])
       $scope.status = response.status == 200 ? 'success' : 'error';
       if(response.status == 200) {
 
-        $localStorage.vetod = $scope.vetod = true;
+        $scope.vetod = true;
 
         Meals.current()
-        .then(function(meal) {
-          $scope.currentMeal = meal;
+        .then(function(response) {
+          $scope.currentMeal = response.meal;
         });
       }
     });
@@ -46,6 +46,11 @@ angular.module('lunch-decision.controllers', [])
 
 .controller('MealDetailCtrl', function($scope, $stateParams, Meals) {
   // $scope.chat = Chats.get($stateParams.chatId);
+  Meals.all().then(function(meals) {
+    $scope.meal = meals.find(function(meal) {
+      return meal.id == $stateParams.mealId;
+    })
+  });
 })
 
 .controller('SettingsCtrl', function($scope, $localStorage) {

@@ -34,7 +34,10 @@ angular.module('lunch-decision.services', [])
         }
       })
         .then(function success(response) {
+          console.log(response);
           return response;
+        }, function errot(response) {
+          console.log(response);
         });
     }
   }
